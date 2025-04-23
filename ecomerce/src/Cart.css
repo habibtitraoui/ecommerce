@@ -1,0 +1,10 @@
+/* Ensure no extra margin or padding */
+.container {
+    padding: 0;
+    margin: 0;
+}
+
+.moving-bar {
+    margin-top: 0;
+    padding-top: 0;
+}

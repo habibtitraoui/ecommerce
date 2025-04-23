@@ -1,0 +1,49 @@
+.moving-bar {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    white-space: nowrap;
+    margin-left: 100px;
+}
+
+.moving-track {
+    display: flex;
+    gap: 10px;
+    animation: moveProducts 30s linear infinite;
+}
+
+.moving-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    margin-left: 200px; /* Adjust this if needed */
+}
+
+.product-image {
+    width: 80px; /* حجم مناسب */
+    height: 80px;
+    object-fit: cover; /* ضمان عدم تمدد الصورة */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* ⏳ تأثير الحركة */
+@keyframes moveProducts {
+    0% { transform: translateX(-100%); } /* Start from the left */
+    100% { transform: translateX(100%); } /* Move to the right */
+}
+
+.moving-item:hover .product-image {
+    transform: scale(1.2); /* تكبير عند تمرير الماوس */
+}
+
+.highlighted-product {
+    animation: highlight 1.1s infinite alternate;
+}
+
+@keyframes highlight {
+    0% { box-shadow: 0 0 20px rgba(21, 0, 255, 0.605); }
+    100% { box-shadow: 0 0 20px rgb(2, 2, 142); }
+}
